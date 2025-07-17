@@ -1,5 +1,15 @@
 @import "tailwindcss";
+@import url('https://fonts.cdnfonts.com/css/inter');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
 
 @theme {
   /* Add your styling here */
+  --font-inter: 'Inter', 'sans-serif';
+  --font-helvetica: 'Helvetica Neue', sans-serif;
+}
+
+* {
+  font-family: 'Helvetica Neue', -apple-system, 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
