@@ -17,7 +17,7 @@ const CommunitySection = () => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <div className="flex justify-between mb-10">
+          <div className="flex justify-between mb-">
             <Typography
               variant={EnumTypography.h2}
               className="max-w-2xl"

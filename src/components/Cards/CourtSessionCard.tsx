@@ -3,6 +3,8 @@ import { contentVariants, itemVariants, slideVariants } from "../../animation/Fr
 import { ArrowRight } from "lucide-react"
 import Typography from "../Typography"
 import { EnumTypography } from "../../enum/EnumTypography"
+import Button from "../Button"
+import { EnumButton } from "../../enum/EnumButton"
 
 interface TCourtSession {
   direction: number;
@@ -86,7 +88,7 @@ const CourtSessionCard = (props: TCourtSession) => {
                 <Typography variant={EnumTypography.h2}>
                   {data.courtName}
                 </Typography>
-                <motion.button
+                {/* <motion.button
                   className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full font-medium flex items-center gap-2 transition-all duration-300 text-sm"
                   whileHover={{ scale: 1.05, y: -1 }}
                   whileTap={{ scale: 0.95 }}
@@ -98,7 +100,13 @@ const CourtSessionCard = (props: TCourtSession) => {
                   >
                     <ArrowRight size={14} />
                   </motion.div>
-                </motion.button>
+                </motion.button> */}
+                <Button
+                  text="Book Now"
+                  isWithIcon={true}
+                  icon={<ArrowRight size={14} />}
+                  type={EnumButton.PRIMARY}
+                />
               </motion.div>
             </motion.div>
           </motion.div>

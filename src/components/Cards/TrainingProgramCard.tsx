@@ -24,12 +24,8 @@ const TrainingProgramCard = () => {
   return (
     <div className="grid md:grid-cols-2 gap-8">
       {programs.map((program, index) => (
-        <motion.div
+        <div
           key={index}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.2, duration: 0.8 }}
-          whileHover={{ y: -10, scale: 1.02 }}
           className={`relative rounded-2xl bg-gradient-to-br ${program.color} overflow-hidden`}
         >
           <div className="absolute inset-0 bg-black/20"></div>
@@ -57,16 +53,13 @@ const TrainingProgramCard = () => {
 
             <div className="space-y-3 mb-8">
               {program.features.map((feature, featureIndex) => (
-                <motion.div
+                <div
                   key={featureIndex}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 + featureIndex * 0.1 + 0.5 }}
                   className="flex items-center space-x-3"
                 >
                   <Check className="w-4 h-4 text-white" />
                   <span className="text-white/80 text-sm">{feature}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -74,7 +67,7 @@ const TrainingProgramCard = () => {
               <span className="text-white/60 text-xs">Book Now - 1</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   )
