@@ -4,6 +4,7 @@ import ClassList from "@pages/ClassList";
 import ClassDetail from "@pages/ClassDetail";
 
 import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
 
 import './App.css'
 
@@ -25,10 +26,13 @@ const AppRouter = () => {
 
 const App = () => {
   return (
-    <Router>
-      <Navbar/>
-      <AppRouter/>
-    </Router>
+    <div className="bg-white-primary">
+      <Router>
+        <Navbar/>
+        <AppRouter/>
+        <Footer/>
+      </Router>
+    </div>
   )
 }
 

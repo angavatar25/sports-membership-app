@@ -121,7 +121,7 @@ const CourtSession = () => {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-white">
+    <section ref={ref} className="py-20">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -184,7 +184,7 @@ const CourtSession = () => {
                       scale: { duration: 0.4 },
                       rotateY: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
                     }}
-                    className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl"
+                    className="absolute inset-0 rounded-4xl overflow-hidden shadow-xl"
                     style={{ transformStyle: "preserve-3d" }}
                   >
                     <motion.img
@@ -203,7 +203,7 @@ const CourtSession = () => {
                       initial="enter"
                       animate="center"
                       exit="exit"
-                      className="absolute inset-0 p-6 flex flex-col justify-between text-white"
+                      className="absolute inset-0 p-10 flex flex-col justify-between text-white"
                     >
                       <motion.div variants={itemVariants}>
                         <div className="flex items-center gap-2 mb-4 bg-white/30 p-2 rounded-full backdrop-blur-lg w-fit">
