@@ -4,12 +4,17 @@
 
 @theme {
   /* Add your styling here */
-  --font-inter: 'Inter', 'sans-serif';
+  --font-inter: 'Inter', 'sans-serif' !important;
   --font-helvetica: 'Helvetica Neue', sans-serif;
+  --color-white-primary: #F5F6FB;
+  --color-blue-darkmode: #0C3954;
+  --color-red-primary: #FF6663;
+  --color-green-primary: #E0FF4F;
+  --color-blue-light: #BFD7EA;
 }
 
 * {
-  font-family: 'Helvetica Neue', -apple-system, 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
