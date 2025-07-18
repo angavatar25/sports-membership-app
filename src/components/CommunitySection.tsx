@@ -17,11 +17,17 @@ const CommunitySection = () => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <div className="flex justify-between">
-            <Typography variant={EnumTypography.h2}>
+          <div className="flex justify-between mb-10">
+            <Typography
+              variant={EnumTypography.h2}
+              className="max-w-2xl"
+            >
               Explore communities and tournaments around you
             </Typography>
-            <Typography variant={EnumTypography.body}>
+            <Typography
+              variant={EnumTypography.caption}
+              className="max-w-80 my-auto"
+            >
               Your sports journey start with us
               and guidance from our professionals coach
             </Typography>

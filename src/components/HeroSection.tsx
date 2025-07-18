@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import Typography from "./Typography"
+import { EnumTypography } from "../enum/EnumTypography"
 
 const HeroSection = () => {
   const ref = useRef(null)
@@ -30,10 +31,10 @@ const HeroSection = () => {
             <div className="w-2 h-2 bg-white rounded-full" />
           </div>
           <div>
-            <Typography variant="h2">
+            <Typography variant={EnumTypography.h2}>
               Tennis
             </Typography>
-            <Typography variant="body">
+            <Typography variant={EnumTypography.body}>
               Experience the thrill of professional tennis training and tournaments
             </Typography>
           </div>
