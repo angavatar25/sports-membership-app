@@ -13,8 +13,8 @@ const AppRouter = () => {
 
   let routesPath = [
     { path: '/', element: <Home/> },
-    { path: '/about', element: <ClassList/> },
-    { path: '/projects', element: <ClassDetail/> },
+    { path: '/class-list', element: <ClassList/> },
+    { path: '/class-detail/:id', element: <ClassDetail/> },
   ];
 
   const routes = useRoutes(routesPath, location);

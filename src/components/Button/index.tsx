@@ -6,7 +6,7 @@ interface TButton {
   isFullWidth?: boolean;
   isWithIcon?: boolean;
   type: 'primary' | 'secondary' | 'dark';
-  icon: any;
+  icon?: any;
 }
 
 const Button = (props: TButton) => {

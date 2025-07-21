@@ -1,23 +1,15 @@
-import { motion } from "framer-motion"
-import { Menu } from "lucide-react"
-import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
+
 import Typography from "./Typography";
 import { EnumTypography } from "../enum/EnumTypography";
+import useNavigationBar from "../hooks/useNavigationBar";
+import Button from "./Button";
+import { EnumButton } from "../enum/EnumButton";
+import useNavigation from "../hooks/useNavigate";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      // Check if user has scrolled past the hero section (assuming hero is ~100vh)
-      const scrollPosition = window.scrollY
-      const heroHeight = window.innerHeight * 0.8 // 80% of viewport height
-
-      setIsScrolled(scrollPosition > heroHeight)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  const { menuNav, isScrolled } = useNavigationBar();
+  const { redirectToPage } = useNavigation();
 
   return (
     <motion.nav
@@ -42,31 +34,25 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <motion.div
-            whileHover={{ scale: 1.05 }}
             className="text-white flex font-bold text-xl"
           >
             Logo
             <div className="hidden md:flex items-center space-x-8 ml-10">
-              {["Home", "Schedule", "Events", "About"].map((item, index) => (
-                <motion.a
-                  key={item}
-                  href="#"
+              {menuNav.map((item, index) => (
+                <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.3 }}
-                  whileHover={{ y: -2 }}
-                  className="text-white hover:text-orange-400 transition-colors duration-200 relative"
+                  className="cursor-pointer"
+                  onClick={() => redirectToPage(item.dir)}
                 >
-                  <Typography variant={EnumTypography.caption}>
-                    {item}
+                  <Typography
+                    isTextWhite={true}
+                    variant={EnumTypography.caption}
+                  >
+                    {item.name}
                   </Typography>
-                  <motion.div
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-orange-400 origin-left"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </motion.a>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -77,14 +63,10 @@ const Navbar = () => {
             transition={{ delay: 0.5 }}
             className="flex items-center space-x-4"
           >
-            <motion.div
-              className="w-8 h-8 bg-white rounded-full"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400 }}
+            <Button
+              text="Login"
+              type={EnumButton.PRIMARY}
             />
-            {/* <Button variant="ghost" size="icon" className="text-white md:hidden hover:bg-white/10">
-              <Menu className="h-6 w-6" />
-            </Button> */}
           </motion.div>
         </div>
       </div>
