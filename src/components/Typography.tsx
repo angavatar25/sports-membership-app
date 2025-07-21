@@ -5,9 +5,10 @@ interface TypographyProps {
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'body' | 'caption';
   className?: string;
   children: React.ReactNode;
+  isTextWhite?: boolean;
 }
 
-const Typography = ({ variant = 'body', className, children }: TypographyProps) => {
+const Typography = ({ variant = 'body', className, children, isTextWhite = false }: TypographyProps) => {
   const variants = {
     h1: "text-4xl md:text-6xl font-700 tracking-tight",
     h2: "text-3xl md:text-4xl font-700 tracking-tight",
@@ -19,9 +20,11 @@ const Typography = ({ variant = 'body', className, children }: TypographyProps) 
 
   const Component = variant.startsWith('h') ? variant as keyof JSX.IntrinsicElements : 'p';
 
+  const whiteText = isTextWhite ? 'text-white' : 'text-blue-darkmode';
+
   return (
     <Component
-    	className={classNames(variants[variant], className)}
+    	className={classNames(whiteText, variants[variant], className)}
 		>
       {children}
     </Component>

@@ -31,10 +31,10 @@ const HeroSection = () => {
             <div className="w-2 h-2 bg-white rounded-full" />
           </div>
           <div>
-            <Typography variant={EnumTypography.h2}>
+            <Typography isTextWhite={true} variant={EnumTypography.h2}>
               Tennis
             </Typography>
-            <Typography variant={EnumTypography.body}>
+            <Typography isTextWhite={true} variant={EnumTypography.body}>
               Experience the thrill of professional tennis training and tournaments
             </Typography>
           </div>
