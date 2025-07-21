@@ -11,7 +11,6 @@ const useHandleClass = () => {
       .select('*');
 
     if (data) {
-      console.log(data);
       setClasslist(data || [])
     }
   }
