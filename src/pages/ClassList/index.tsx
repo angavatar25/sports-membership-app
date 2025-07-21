@@ -7,9 +7,12 @@ import { EnumTypography } from '../../enum/EnumTypography'
 import { EnumButton } from '../../enum/EnumButton'
 import Button from '../../components/Button'
 import useNavigation from '../../hooks/useNavigate'
+import useHandleClass from '../../hooks/useHandleClass';
 
 const ClassList = () => {
   const { redirectToPage, getQueryParams } = useNavigation();
+  const { classlist } = useHandleClass();
+
   const isTournamentsKey = getQueryParams().get("isTournament");
 
   return (
@@ -34,22 +37,12 @@ const ClassList = () => {
         </div>
       </div>
       <div className='grid grid-cols-4 gap-4'>
-        <ClassCard
-          onClick={() => redirectToPage('/class-detail/1')}
-          data={{
-            level: "Intermediate",
-            date: "30 July 2025",
-            eventName: "Urban Tennis Bash",
-            location: "Bandung, Indonesia",
-            joinedCount: 17,
-            isWithImage: false,
-          }}
-        />
-        {/* <ClassCard/>
-        <ClassCard/>
-        <ClassCard/>
-        <ClassCard/>
-        <ClassCard/> */}
+        {classlist.length > 0 && classlist.map((data) => (
+          <ClassCard
+            key={`class-${data.eventName}`}
+            data={data}
+          />
+        ))}
       </div>
       <div className='flex justify-center my-10'>
         <Button

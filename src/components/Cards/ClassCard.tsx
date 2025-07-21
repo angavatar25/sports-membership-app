@@ -1,36 +1,9 @@
 import { MapPin, MoveRight } from "lucide-react";
-import Typography from "../Typography";
-import { EnumTypography } from "../../enum/EnumTypography";
 import classNames from "classnames";
 
-// const isWithImage = true;
-const imageUrl = "https://images.pexels.com/photos/1619860/pexels-photo-1619860.jpeg?_gl=1*77eqv2*_ga*MTA1MTc4ODg2NC4xNzQwNDA3NDE2*_ga_8JE65Q40S6*czE3NTMwNjcyNzIkbzI5JGcxJHQxNzUzMDY3Mjc2JGo1NiRsMCRoMA..";
-
-type BaseProps = {
-  level: string;
-  date: string;
-  eventName: string;
-  location: string;
-  joinedCount: number;
-};
-
-type WithImage = {
-  onClick: any;
-  data: BaseProps & {
-    isWithImage: true;
-    imageUrl: string;
-  };
-};
-
-type WithoutImage = {
-  onClick: any;
-  data: BaseProps & {
-    isWithImage: false;
-    imageUrl?: string;
-  };
-};
-
-export type EventCardProps = WithImage | WithoutImage;
+import Typography from "../Typography";
+import { EnumTypography } from "../../enum/EnumTypography";
+import type { EventCardProps } from "../../interface/classInterface";
 
 const ClassCard = (props: EventCardProps) => {
   const { data } = props;
