@@ -43,11 +43,6 @@ const ClassList = () => {
             data={data}
           />
         ))}
-        {/* <ClassCard/>
-        <ClassCard/>
-        <ClassCard/>
-        <ClassCard/>
-        <ClassCard/> */}
       </div>
       <div className='flex justify-center my-10'>
         <Button
