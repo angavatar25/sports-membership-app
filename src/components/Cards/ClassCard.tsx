@@ -4,6 +4,7 @@ import classNames from "classnames";
 import Typography from "../Typography";
 import { EnumTypography } from "../../enum/EnumTypography";
 import type { EventCardProps } from "../../interface/classInterface";
+import { FormatDate } from "../../helper/DateFormat";
 
 const ClassCard = (props: EventCardProps) => {
   const { data } = props;
@@ -16,7 +17,7 @@ const ClassCard = (props: EventCardProps) => {
     <div
       onClick={props.onClick}
       className={classNames({
-        "rounded-4xl p-6 w-full text-gray-900 relative overflow-hidden": true,
+        "rounded-4xl w-full text-gray-900 relative overflow-hidden": true,
         "bg-green-primary": !isWithImage,
         'bg-cover bg-center bg-black': isWithImage,
       })}
@@ -26,13 +27,13 @@ const ClassCard = (props: EventCardProps) => {
         <div className="absolute inset-0 bg-black/30 z-0 rounded-2xl" />
       )}
 
-      <div className="z-10 relative">
+      <div className="z-10 w-full h-full p-6 relative">
         <div className="flex justify-between items-center mb-16">
           <span className="bg-gray-900 text-white text-xs px-3 py-1 rounded-full">
             {level}
           </span>
           <span className="bg-white text-red-500 text-xs px-3 py-1 rounded-full">
-            {date}
+            {FormatDate(date)}
           </span>
         </div>
 
@@ -73,7 +74,7 @@ const ClassCard = (props: EventCardProps) => {
           <Typography
             isTextWhite={isTextWhite}
             variant={EnumTypography.h3}
-            className="max-w-[200px]"
+            className="max-w-[200px] line-clamp-2"
           >
             {eventName}
           </Typography>

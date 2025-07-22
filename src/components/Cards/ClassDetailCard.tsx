@@ -1,28 +1,35 @@
 import { EnumButton } from "../../enum/EnumButton"
+import type { ClassDetailCard } from "../../interface/classInterface"
 import Button from "../Button"
 
-const ClassDetailCard = () => {
+const ClassDetailCard = (props: ClassDetailCard) => {
+  const { data } = props;
   return (
     <div className="max-w-sm p-6 bg-white rounded-3xl shadow-md text-[#153850] space-y-4">
-      <h2 className="text-2xl font-medium">Beginner</h2>
+      <h2 className="text-2xl font-medium">
+        {data.level}
+      </h2>
 
       <div>
         <p className="text-sm font-semibold text-[#ff6a6a] mb-3">DATE & TIME</p>
-        <p className="text-base">20 January 2026</p>
+        <p className="text-base">
+          {data.time}
+        </p>
       </div>
 
       <div>
         <p className="text-sm font-semibold text-[#ff6a6a] mb-3">LOCATION</p>
         <p className="text-base">
-          Vip Tennis 1 And 2, Ultra Dome Padel And Tennis Courts Kota Jakarta Utara,
-          Daerah Khusus Ibukota Jakarta
+          {data.address}
         </p>
       </div>
 
       <hr className="border-t border-gray-200" />
 
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-lg">Rp.150.000</p>
+        <p className="font-semibold text-lg">
+          {data.price}
+        </p>
         <Button
           text="Join Class"
           type={EnumButton.PRIMARY}

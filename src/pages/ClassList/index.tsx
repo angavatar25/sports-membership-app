@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 import ClassCard from '../../components/Cards/ClassCard'
@@ -11,9 +12,15 @@ import useHandleClass from '../../hooks/useHandleClass';
 
 const ClassList = () => {
   const { redirectToPage, getQueryParams } = useNavigation();
-  const { classlist } = useHandleClass();
+  const { classlist, getClassList } = useHandleClass();
 
   const isTournamentsKey = getQueryParams().get("isTournament");
+
+  useEffect(() => {
+    if (classlist.length === 0) {
+      getClassList();
+    }
+  }, [])
 
   return (
     <div className='container mx-auto'>
@@ -39,6 +46,7 @@ const ClassList = () => {
       <div className='grid grid-cols-4 gap-4'>
         {classlist.length > 0 && classlist.map((data) => (
           <ClassCard
+            onClick={() => redirectToPage(`/class-detail/${data.id}`)}
             key={`class-${data.eventName}`}
             data={data}
           />
