@@ -4,6 +4,7 @@ export type TypeClass = {
   eventName: string;
   location: string;
   joinedCount: number;
+  id: number | string;
 };
 
 export type TypeClassWithImage = {
@@ -21,5 +22,14 @@ export type TypeClassWithoutImage = {
     imageUrl?: string;
   };
 };
+
+export type ClassDetailCard = {
+  data: {
+    level: string;
+    time: string;
+    address: string;
+    price: number;
+  }
+}
 
 export type EventCardProps = TypeClassWithImage | TypeClassWithoutImage;
