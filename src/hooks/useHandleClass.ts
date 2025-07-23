@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { supabase } from "../supabase-client";
 import { useClassStore } from "../store/useClassStore";
 import { EnumTable } from "../enum/EnumTable";

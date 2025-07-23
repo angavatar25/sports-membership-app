@@ -1,10 +1,10 @@
 import { MapPin, MoveRight } from "lucide-react";
 import classNames from "classnames";
 
-import Typography from "../Typography";
-import { EnumTypography } from "../../enum/EnumTypography";
-import type { EventCardProps } from "../../interface/classInterface";
-import { FormatDate } from "../../helper/DateFormat";
+import Typography from "@/components/Typography";
+import { EnumTypography } from "@/enum/EnumTypography";
+import type { EventCardProps } from "@/interface/classInterface";
+import { FormatDate } from "@/helper/DateFormat";
 
 const ClassCard = (props: EventCardProps) => {
   const { data } = props;

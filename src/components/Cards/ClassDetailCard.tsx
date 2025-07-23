@@ -1,6 +1,6 @@
-import { EnumButton } from "../../enum/EnumButton"
-import type { ClassDetailCard } from "../../interface/classInterface"
-import Button from "../Button"
+import { EnumButton } from "@/enum/EnumButton"
+import { ClassDetailCard } from "@/interface/classInterface"
+import Button from "@/components/Button"
 
 const ClassDetailCard = (props: ClassDetailCard) => {
   const { data } = props;
