@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-import ClassCard from '../../components/Cards/ClassCard'
-import Input from '../../components/Input/InputWithIcon'
-import Typography from '../../components/Typography'
-import { EnumTypography } from '../../enum/EnumTypography'
-import { EnumButton } from '../../enum/EnumButton'
-import Button from '../../components/Button'
-import useNavigation from '../../hooks/useNavigate'
-import useHandleClass from '../../hooks/useHandleClass';
+import ClassCard from '@/components/Cards/ClassCard'
+import Input from '@/components/Input/InputWithIcon'
+import Typography from '@/components/Typography'
+import { EnumTypography } from '@/enum/EnumTypography'
+import { EnumButton } from '@/enum/EnumButton'
+import Button from '@/components/Button'
+import useNavigation from '@/hooks/useNavigate'
+import useHandleClass from '@/hooks/useHandleClass';
 
 const ClassList = () => {
   const { redirectToPage, getQueryParams } = useNavigation();

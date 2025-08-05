@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import EventBanner from "../../components/Banner/EventBanner";
+import EventBanner from "@/components/Banner/EventBanner";
 import ClassCard from "../../components/Cards/ClassCard";
 import ClassDetailCard from "../../components/Cards/ClassDetailCard";
 import Typography from "../../components/Typography";

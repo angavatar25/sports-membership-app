@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { supabase } from "../supabase-client";
 import { useClassStore } from "../store/useClassStore";
@@ -6,11 +6,17 @@ import { EnumTable } from "../enum/EnumTable";
 import { FormatClassDate } from "../helper/DateFormat";
 
 const useHandleClass = () => {
+  const [activeProfileTab, setActiveProfileTab] = useState('private');
+
   const classlist = useClassStore((state) => state.classList);
   const classDetail = useClassStore((state) => state.classDetail);
 
   const setClassList = useClassStore((state) => state.setClassList);
   const setClassDetail = useClassStore((state) => state.setClassDetail);
+
+  const handleActiveProfileTab = (tab: string) => {
+    setActiveProfileTab(tab);
+  }
 
   const getClassList = async () => {
     const { data } = await supabase
@@ -48,8 +54,10 @@ const useHandleClass = () => {
   return {
     classlist,
     classDetail,
+    activeProfileTab,
     getClassList,
     getClassDetail,
+    handleActiveProfileTab,
   };
 }
 
