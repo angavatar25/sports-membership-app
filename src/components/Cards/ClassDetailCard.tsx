@@ -1,8 +1,8 @@
 import { EnumButton } from "@/enum/EnumButton"
-import { ClassDetailCard } from "@/interface/classInterface"
+import { TypeClassDetailCard } from "@/interface/classInterface"
 import Button from "@/components/Button"
 
-const ClassDetailCard = (props: ClassDetailCard) => {
+const ClassDetailCard = (props: TypeClassDetailCard) => {
   const { data } = props;
   return (
     <div className="max-w-sm p-6 bg-white rounded-3xl shadow-md text-[#153850] space-y-4">

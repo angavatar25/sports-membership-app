@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { MapPin } from "lucide-react";
 
-import { EnumTypography } from "../../enum/EnumTypography";
-import Typography from "../Typography";
+import { EnumTypography } from "@/enum/EnumTypography";
+import Typography from "@/components/Typography";
 
 type BaseProps = {
   eventName: string;

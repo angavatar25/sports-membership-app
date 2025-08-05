@@ -9,10 +9,7 @@
     "noEmit": false,
     "emitDeclarationOnly": true,
     "paths": {
-      "@/*": ["src/*"]
-      // "@components/*": ["src/components/*"],
-      // "@assets/*": ["src/assets/*"],
-      // "@pages/*": ["src/pages/*"]
+      "@/*": ["./*"]
     },
     "jsx": "react-jsx",
     "moduleResolution": "node",
@@ -25,5 +22,5 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ],
+  ]
 }

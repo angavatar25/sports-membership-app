@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, ArrowRight, Calendar, Users } from "lucide-react"
+import { ChevronLeft, ChevronRight, Calendar, Users } from "lucide-react"
 
 const CommunityCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0)

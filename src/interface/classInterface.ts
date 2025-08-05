@@ -23,7 +23,7 @@ export type TypeClassWithoutImage = {
   };
 };
 
-export type ClassDetailCard = {
+export type TypeClassDetailCard = {
   data: {
     level: string;
     time: string;

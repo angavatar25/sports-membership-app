@@ -1,3 +1,5 @@
 export enum EnumTable {
-  ClassList = "classList"
+  ClassList = "classlist",
+  User = "users",
+  PrivateBookedSession = "booked_private"
 };

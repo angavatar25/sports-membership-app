@@ -66,7 +66,7 @@ const ClassCard = (props: EventCardProps) => {
             "text-sm": true,
             "text-white": isWithImage,
             "text-blue-darkmode": !isWithImage,
-          })}>{joinedCount} joined</span>
+          })}>{joinedCount || 0} joined</span>
         </div>
 
         {/* Event Name and Location */}

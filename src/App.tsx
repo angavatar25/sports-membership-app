@@ -2,6 +2,7 @@ import { BrowserRouter as Router, useLocation, useRoutes } from "react-router-do
 import Home from "@/pages/Home";
 import ClassList from "@/pages/ClassList";
 import ClassDetail from "@/pages/ClassDetail";
+import Profile from "@/pages/Profile";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,7 +16,7 @@ const AppRouter = () => {
     { path: '/', element: <Home/> },
     { path: '/class-list', element: <ClassList/> },
     { path: '/class-detail/:id', element: <ClassDetail/> },
-    { path: '/profile', element: <ClassDetail/> },
+    { path: '/profile', element: <Profile/> },
   ];
 
   const routes = useRoutes(routesPath, location);
