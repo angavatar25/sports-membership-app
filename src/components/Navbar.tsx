@@ -9,7 +9,7 @@ import useNavigation from "../hooks/useNavigate";
 
 const Navbar = () => {
   const { menuNav, isScrolled } = useNavigationBar();
-  const { redirectToPage } = useNavigation();
+  const { redirectToPage } = useNavigation(); 
 
   return (
     <motion.nav
