@@ -4,7 +4,7 @@ import NavigationTab from "../../components/Tabs/NavigationTab";
 import Typography from "../../components/Typography";
 import { EnumTypography } from "../../enum/EnumTypography";
 import useHandleClass from "../../hooks/useHandleClass";
-import userUser from "../../hooks/userUser";
+import useUser from "../../hooks/useUser";
 import ClassCard from "../../components/Cards/ClassCard";
 import useNavigation from "../../hooks/useNavigate";
 
@@ -19,7 +19,7 @@ const Profile = () => {
     userBookedSession,
     getUserProfile,
     getUserBookedSession,
-  } = userUser();
+  } = useUser();
 
   const { redirectToPage } = useNavigation();
   

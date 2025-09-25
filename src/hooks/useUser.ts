@@ -5,12 +5,55 @@ import { useUserStore } from "../store/useUserStore"
 
 const user_id = "dc01b75f-796c-483e-88fa-44d655e6cc8c";
 
+interface TSignUp {
+  userName: string;
+  password: string;
+  fullName: string;
+  email: string;
+};
+
 const userUser = () => {
   const userData = useUserStore((state) => state.userData);
   const userBookedSession = useUserStore((state) => state.bookedSession);
 
   const setUserData = useUserStore((state) => state.setUserData);
   const setUserBookedSession = useUserStore((state) => state.setUserBookedSession);
+
+  const signUpUser = async (payload: TSignUp) => {
+    const { email, password, userName, fullName } = payload;
+
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password
+    });
+
+    if (error) throw error;
+
+    const authUserId = data?.user?.id;
+
+    const { error: insertError } = await supabase
+      .from('users')
+      .insert({
+        user_id: authUserId,
+        user_name: userName,
+        name: fullName,
+        password,
+        email,
+      })
+
+    if (insertError) throw insertError
+
+    return data.user;
+  };
+
+  const signInUser = async (payload: { email: string; password: string }) => {
+    const { email, password } = payload;
+
+    await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+  }
 
   const getUserProfile = async () => {
     const { data } = await supabase
@@ -51,6 +94,8 @@ const userUser = () => {
     userBookedSession,
     getUserProfile,
     getUserBookedSession,
+    signUpUser,
+    signInUser,
   }
 }
 
